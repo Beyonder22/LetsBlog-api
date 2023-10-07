@@ -38,7 +38,7 @@ db.once("open",()=> {
 })
 
 app.get('/',(req,res)=>{
-	res.status(200).send("Deployed successfully");
+	res.status(200).send(db);
 })
 
 app.post('/register',(req,res)=>{
