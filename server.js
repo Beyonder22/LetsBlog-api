@@ -31,14 +31,9 @@ const connection_url = 'mongodb+srv://ak6401790:L2WIjx3pywa7CQ3Z@cluster0.ilwhgj
 mongoose.connect(connection_url, {
 
 });
-const db = mongoose.connection
-
-db.once("open",()=> {
-	console.log("DB connected");
-})
 
 app.get('/',(req,res)=>{
-	res.status(200).send(db);
+	res.status(200).send('ok');
 })
 
 app.post('/register',(req,res)=>{
