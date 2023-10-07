@@ -17,7 +17,7 @@ const __dirname = dirname(__filename);
 const app = express();
 
 const salt = bcrypt.genSaltSync(10);
-const secret = 'dfasvcac33cdcafv3';
+const secret = 'secret';
 const uploadMiddleware = multer({dest:'uploads/'});
 
 const port = process.env.PORT || 9000
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads',express.static(__dirname + '/uploads'));
 
-const connection_url = 'mongodb+srv://ak6401790:L2WIjx3pywa7CQ3Z@cluster0.ilwhgjb.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp';
+const connection_url = 'mongodb-url';
 
 mongoose.connect(connection_url, {
 
@@ -137,5 +137,3 @@ app.get('/post', async (req,res)=>{
 })
 
 app.listen(port,()=>console.log('Listening on local host on port: '+port));
-
-//mongodb+srv://ak6401790:L2WIjx3pywa7CQ3Z@cluster0.ilwhgjb.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
