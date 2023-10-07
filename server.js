@@ -32,6 +32,9 @@ mongoose.connect(connection_url, {
 
 });
 
+app.get('/',(req,res)=>{
+	res.status(200).send("Deployed successfully");
+})
 
 app.post('/register',(req,res)=>{
 	const {username, password} = req.body;
