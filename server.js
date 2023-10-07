@@ -35,7 +35,7 @@ const db = mongoose.connection
 
 db.once("open",()=> {
 	console.log("DB connected");
-}
+})
 
 app.get('/',(req,res)=>{
 	res.status(200).send("Deployed successfully");
